@@ -1,4 +1,4 @@
-import client from '../client.js';
+import client from './client.js';
 import { Entity, Schema } from 'redis-om';
 
 // Define a schema for the person entity

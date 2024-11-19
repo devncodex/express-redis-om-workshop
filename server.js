@@ -4,6 +4,8 @@ import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import { router as personRouter } from './routers/person-router.js'
 import { router as searchRouter } from './routers/search-router.js'
+import { router as locationRouter } from './routers/location-router.js'
+
 
 /* create an express app and use JSON */
 const app = express();
@@ -18,7 +20,7 @@ try {
   console.error('Failed to load Swagger document:', error);
 }
 
-app.use('/person', personRouter)
+app.use('/person', personRouter, locationRouter)
 app.use('/persons', searchRouter)
 
 /* 404 handler */
